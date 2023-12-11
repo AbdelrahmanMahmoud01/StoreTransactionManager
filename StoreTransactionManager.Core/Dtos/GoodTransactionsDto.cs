@@ -36,7 +36,7 @@ public class GoodTransactionsDto
         }
     }
 
-    public static GoodTransactionsDto CreateValidObject(List<GoodTransaction> transactions , int firstBalance)
+    public static GoodTransactionsDto New(List<GoodTransaction> transactions , int firstBalance)
     {
         return new GoodTransactionsDto
         {

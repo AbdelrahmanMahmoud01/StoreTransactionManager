@@ -13,7 +13,7 @@ public class GoodTransaction
     public TransactionDirection Direction { get; private set; }
     public string? Comments { get; private set; }
 
-    public static GoodTransaction CreateValidObject(string?[] lineData)
+    public static GoodTransaction New(string?[] lineData)
     {
         if (!TryParseLineData(lineData, out var goodTransaction))
         {

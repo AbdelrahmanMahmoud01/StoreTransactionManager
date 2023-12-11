@@ -54,7 +54,7 @@ public class GoodsService : IGoodsService
                      
                     var values = line.Split(';');
 
-                    var goodTransaction = GoodTransaction.CreateValidObject(values);
+                    var goodTransaction = GoodTransaction.New(values);
 
                     if (goodTransaction is null)
                     {
@@ -67,7 +67,7 @@ public class GoodsService : IGoodsService
             goodTransactionsList = goodTransactionsList
                 .Where(x => x.TransactionDate >= fromDate && x.TransactionDate <= toDate)
                 .ToList();
-            var result = GoodTransactionsDto.CreateValidObject(goodTransactionsList, firstBalance);
+            var result = GoodTransactionsDto.New(goodTransactionsList, firstBalance);
             return result;
         }
         catch (Exception)
@@ -144,7 +144,7 @@ public class GoodsService : IGoodsService
                         continue;
                     }
 
-                    var goodTransaction = GoodTransaction.CreateValidObject(values);
+                    var goodTransaction = GoodTransaction.New(values);
 
                     if (goodTransaction is null)
                     {
